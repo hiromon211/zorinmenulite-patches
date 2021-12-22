@@ -1,2 +1,2 @@
-# xfce4-zorinmenulite-plugin-patches
+# Zorin Menu Lite Patches
 Patches for Xfce4 Zorin Menu Lite Plugin
