@@ -1,0 +1,15 @@
+--- window.h	2021-12-22 10:37:46.286645000 +0800
++++ window-new.h	2021-12-22 10:39:06.093311852 +0800
+@@ -115,9 +115,9 @@
+ 	GtkWidget* m_places_button[6];
+ 	PlaceButton* m_places[6];
+ 
+-	GtkWidget* m_quicklinks_button[3];
+-	gulong m_quicklink_slots[3];
+-	Command* m_quicklinks[3];
++	GtkWidget* m_quicklinks_button[1];
++	gulong m_quicklink_slots[1];
++	Command* m_quicklinks[1];
+ 
+ 	GtkEntry* m_search_entry;
+ 

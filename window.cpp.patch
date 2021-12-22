@@ -1,0 +1,55 @@
+--- window.cpp	2021-11-14 03:44:02.000000000 +0800
++++ window-new.cpp	2021-12-22 10:52:16.336642000 +0800
+@@ -124,12 +124,12 @@
+ 	}
+ 
+ 	// Create quicklink commands
+-	m_quicklinks[0] = new Command("gnome-software-symbolic",_("Software"), "gnome-software", _("Failed to open Software."), true, this);
+-	m_quicklinks[1] = new Command("preferences-system-symbolic",_("Settings"), "xfce4-settings-manager", _("Failed to open settings manager."), true, this);
+-	m_quicklinks[2] = new Command("zorin-appearance-symbolic",_("Zorin Appearance"), "zorin-appearance", _("Failed to open Zorin Appearance."), true, this);
++	// m_quicklinks[0] = new Command("gnome-software-symbolic",_("Software"), "gnome-software", _("Failed to open Software."), true, this);
++	m_quicklinks[0] = new Command("preferences-system-symbolic",_("Settings"), "xfce4-settings-manager", _("Failed to open settings manager."), true, this);
++	//m_quicklinks[2] = new Command("zorin-appearance-symbolic",_("Zorin Appearance"), "zorin-appearance", _("Failed to open Zorin Appearance."), true, this);
+ 
+ 	// Create quicklink buttons
+-	for (int i = 0; i < 3; ++i)
++	for (int i = 0; i < 1; ++i)
+ 	{
+ 		m_quicklinks_button[i] = m_quicklinks[i]->get_button();
+ 		m_quicklink_slots[i] = g_signal_connect_slot<GtkButton*>(m_quicklinks_button[i], "clicked", &Window::hide, this);
+@@ -226,7 +226,7 @@
+ 
+ 	// Create box for sidebar quicklinks
+ 	m_quicklinks_box = GTK_BOX(gtk_box_new(GTK_ORIENTATION_VERTICAL, 0));
+-	for (int i = 0; i < 3; ++i)
++	for (int i = 0; i < 1; ++i)
+ 	{
+ 		gtk_box_pack_start(m_quicklinks_box, m_quicklinks_button[i], true, true, 0);
+ 	}
+@@ -277,7 +277,7 @@
+ 		}
+ 	}
+ 
+-	for (int i = 0; i < 3; ++i)
++	for (int i = 0; i < 1; ++i)
+ 	{
+ 		g_signal_handler_disconnect(m_quicklinks_button[i], m_quicklink_slots[i]);
+ 		gtk_container_remove(GTK_CONTAINER(m_quicklinks_box), m_quicklinks_button[i]);
+@@ -317,7 +317,7 @@
+ 	}
+ 
+ 	// Hide quicklink buttons to remove active border
+-	for (int i = 0; i < 3; ++i)
++	for (int i = 0; i < 1; ++i)
+ 	{
+ 		gtk_widget_set_visible(m_quicklinks_button[i], false);
+ 	}
+@@ -347,7 +347,7 @@
+ 	}
+ 
+ 	// Make sure quicklinks are valid and visible
+-	for (int i = 0; i < 3; ++i)
++	for (int i = 0; i < 1; ++i)
+ 	{
+ 		m_quicklinks[i]->check();
+ 	}
